@@ -56,3 +56,16 @@ In this section, I've created SQL queries and mini-projects based on what I’ve
     4. **Computing View Item Metrics**: Similar to the order binary, this part calculates a view binary metric for the same 30-day window, assessing whether users viewed items post-test.
     5. **Computing Lift and P-value**: The final part of the script aggregates these metrics and prepares them for statistical analysis to compute lift and p-values, essential for evaluating the effectiveness of the test variants.
 - **Result and Explanation**: The result of this script provides a detailed analysis of user behavior in response to different test scenarios, including both order and view metrics. It offers a comprehensive view of how users interact with items in the test groups and enables a statistical evaluation of the test's impact. This analysis is crucial for understanding the effectiveness of different test variants and making data-driven decisions in feature development.
+
+
+Example 5.1 : Logistic Regression Classifier for Incident Prediction
+Problem Statement: This project focuses on developing a logistic regression model to predict the type of incident (Call_Type_Group) for fire department calls. The goal is to preprocess the data, train a machine learning model, and make predictions using both PySpark and Spark SQL.
+Steps and SQL Queries:
+Data Loading: Loaded the fire department call data from a Parquet file into a Spark SQL table (fireCallsClean).
+Data Cleaning: Cleaned the data by filtering out null values and less frequent call types, creating a temporary view (fireCallsGroupCleaned) for analysis.
+Feature Selection: Selected relevant columns (Call_Type, Fire_Prevention_District, Neighborhooods_-_Analysis_Boundaries, Number_of_Alarms, Original_Priority, Unit_Type, Battalion, Call_Type_Group) to create a new view (fireCallsDF).
+Data Transformation: Converted the Spark DataFrame to a pandas DataFrame for preprocessing, using label encoding and train-test splitting for the logistic regression model.
+Model Training: Trained a logistic regression model using Sklearn, integrated within a pipeline with one-hot encoding for categorical features.
+Model Evaluation: Evaluated the model's accuracy on test data and saved the trained pipeline using MLflow.
+Model Deployment: Registered the model as a UDF in Spark SQL to enable parallel predictions on new data.
+Result and Explanation: The project successfully developed a logistic regression classifier to predict incident types with high accuracy. The integration of PySpark and Spark SQL allowed efficient data processing and model deployment, demonstrating the capability to handle large datasets and perform complex machine learning tasks in a distributed environment. This project showcases the use of both PySpark and Spark SQL for end-to-end data analysis and machine learning in a big data context.
