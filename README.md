@@ -74,4 +74,4 @@ This project focuses on developing a logistic regression model to predict the ty
 7. **Model Deployment**: Registered the model as a UDF in Spark SQL to enable parallel predictions on new data.
 
 ## Result and Explanation
-The project successfully developed a logistic regression classifier to predict incident types with high accuracy. The integration of PySpark and Spark SQL allowed efficient data processing and model deployment, demonstrating the capability to handle large datasets and perform complex machine learning tasks in a distributed environment. This project showcases the use of both PySpark and Spark SQL for end-to-end data analysis and machine learning in a big data context.
+The project successfully developed a logistic regression classifier to predict incident types with high accuracy. The integration of PySpark and Spark SQL allowed efficient data processing and model deployment, demonstrating the capability to handle large datasets and perform complex machine learning tasks in a distributed environment. 
